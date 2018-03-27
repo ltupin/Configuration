@@ -1,0 +1,61 @@
+#debug          on
+escape          "^zz"   # the command character
+bell_msg        "Beep in window %
+startup_message off
+vbell           off
+defscrollback   20000
+msgwait         2
+caption         always  "%?%F%{=b RW}%:%{=b dw}%?%3n%f %t %? [%h]%?"
+hardstatus      alwayslastline "%{= wK}%-Lw%{=b RW}%n%f %t%{-}%{= wK}%+Lw%{-} %= %-=|%{=b yK} %H (%l) |%{=b mW} %D %d %M %Y %c|%{-}"
+shell           zsh # let's hope it's there...
+activity        "Activity in window %n^G"
+
+###########################################################################
+# layouts
+###########################################################################
+layout save Desktop1
+layout autosave on
+
+###########################################################################
+# Bindings
+###########################################################################
+bind ^k
+bind ^\
+bind    \\      quit
+bind    I       login on
+bind    O       login off
+bind    }       history
+bind    =       resize =
+bind    +       resize +1
+bind    -       resize -1
+bind    _       silence
+bind    j       focus down
+bind    k       focus up
+bind    o       focus
+bind    K       kill
+bind    (       copy
+bind    )       paste .
+bind    j       select 3
+
+###########################################################################
+# Copy-mode
+###########################################################################
+# special hack for C-e, since it should go *past* the last char.
+# (-m means this is for copy mode only.)
+bindkey -m ^e stuff "\$^f"
+
+# page up and page down
+bindkey -m -k kP stuff Y
+bindkey -m -k kN stuff V
+
+# control arrows move by words. (set B, e, and w to F keys so that i can use
+# them to move by words, but they themselves still quit copy mode.)
+markkeys B=[:E=]:b={:e=}:w=>
+bindkey -m ^[Od stuff {  #"[[}"
+bindkey -m ^[Oc stuff ]  #"}]^f"
+
+###########################################################################
+# termcap info
+###########################################################################
+term            "screen-256color"
+terminfo        * smso=\E[7m:rmso=\E[27m:sitm=\E[3m:ritm=\E[23m
