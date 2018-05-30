@@ -1,0 +1,9 @@
+export VISUAL=vim
+export EDITOR="$VISUAL"
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+ZSH_THEME="agnoster"
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+sprites_sf=( $HOME/sprites_sf/*.txt  );cat "${sprites_sf[RANDOM % ${#sprites_sf[@]}]}"
