@@ -1,0 +1,27 @@
+[user]
+	email = laurent.tupin[at]gmail.com
+	name = minux
+[push]
+	default = simple
+[alias]
+	ls = log --graph --pretty=format:\"%C(auto)%h%<(3)%d %s %C(bold blue)(%cr, %an)%Creset%n\" --abbrev-commit --all --find-copies -M --stat
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	la = log --graph --pretty=format:\"%C(auto)%h%<(3)%d %s %C(bold blue)(%cr, %an)%Creset\" --abbrev-commit --all
+	st = status
+[color]
+	branch = auto
+  	diff = auto
+  	status = auto
+[color "branch"]
+  	current = yellow reverse
+  	local = yellow
+  	remote = green
+[color "diff"]
+  	meta = yellow bold
+  	frag = magenta bold
+  	old = red bold
+  	new = green bold
+[color "status"]
+  	added = yellow
+  	changed = green
+  	untracked = cyan
