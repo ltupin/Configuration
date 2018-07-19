@@ -1,6 +1,6 @@
 export VISUAL=vim
 export EDITOR="$VISUAL"
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 export ZSH=/home/vagrant/.oh-my-zsh
 export GOPATH=$HOME/gocode
 
