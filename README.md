@@ -1,22 +1,135 @@
-### Sur Windows, installer les ttfs powerline
+## Terminal and Shell
 
-https://github.com/powerline/fonts/tree/master/DejaVuSansMono
-
-### Sur Linux, installer les ttfs powerline
-```
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh
-cd ..
-rm -rf fonts
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+### Install [brew](https://brew.sh/):  
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-### Note pour l'authentification Github
+### Install [iterm2](https://iterm2.com/):  
+```bash
+brew update
+brew install --cask iterm2
+```
 
-Si le 22 est bloqué et qu'on ne peut donc pas pousser par clefs.
+Import `Default.json` file:  
 
-Afin de ne pas garder ses creds en clair sur le disque avec `git config --global credential.helper store` ou temporairement avec `git config --global credential.helper cache` on va utiliser [Git Credential Manager for Windows](https://github.com/Microsoft/Git-Credential-Manager-for-Windows) qui a remplacé [git-credential-winstore](https://archive.codeplex.com/?p=gitcredentialstore).
+<img src="iterm2.png" alt="drawing" width="200"/>
 
-Il faut donc télécharger la dernière version en `zip` de [Git Credential Manager for Windows](https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases) puis copier les `binaires` et `dlls` qu'elle contient dans `C:\Users\%USERNAME%\.babun\cygwin\usr\libexec\git-core`.
+### Install [oh-my-zsh](https://ohmyz.sh/#install):  
+- Git Aliases Cheatsheet: https://www.hschne.at/git-aliases/
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# This plugin is for syntax highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# This plugin is for autosuggestion
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+# Zinit is a plugin manager for zsh
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+
+
+cp zshrc ~/.zshrc
+```
+
+### Install [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts):
+```bash
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+```
+
+### Install [Powerlevel10k](https://github.com/romkatv/powerlevel10k):
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc	
+
+cp p10k.zsh ~/.p10k.zsh	
+```
+---
+## Editors
+
+### Install [Vim Airline](https://github.com/vim-airline/vim-airline):
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+cp vimrc ~/.vimrc
+```
+
+### Install [Visual Studio Code](https://code.visualstudio.com/):
+```bash
+brew install --cask visual-studio-code
+```
+| Description                   | Action                                |
+|-------------------------------|:-------------------------------------:|
+| Preview markdown files 		| **⇧⌘V**								|
+| Open extensions view	 		| **⇧⌘X**								|
+| Column selection with mouse 	| **Shift+Option**						|
+| Column selection	 			| **Shift+Option+Cmd and arrow keys**	|
+---
+## Install Kubernetes related packages  
+
+[Podman](https://podman.io/): Podman is a daemonless container engine for developing, managing, and running OCI Containers on your Linux System.  
+
+```bash
+brew install \
+	kubectl podman && \
+alias docker=podman &&\
+podman machine init &&\
+podman machine start
+```	
+ [kubectl]()  
+ [kubectx]()  
+ [minikube]()  
+ [helm]()  
+ [k9s]()  
+ [kube-ps1]()  
+
+```bash
+brew install \
+	kubectl kubectx minikube helm k9s kube-ps1
+```	
+---
+## Install other packages
+
+### [Tmux]()
+| Description                  | Action                 |
+|------------------------------|:----------------------:|
+| Creates a new window         | **Ctrl-b c**           |
+| Go to next window            | **Ctrl-b n**           |
+| Go to previous window        | **Ctrl-b p**           |
+| Split window top/bottom      | **Ctrl-b "**           |
+| Split window left/right      | **Ctrl-b %**           |
+| Rearrange windows in columns | **Ctrl-b Alt-1**       |
+| Rearrange windows in rows    | **Ctrl-b Alt-2**       |
+| Navigate to other windows	   | **Ctrl-b arrow keys**  |
+| Detach session			   | **Ctrl-b d**           |
+| Reattach to session		   | **tmux attach**        |
+
+
+### [Mosh](https://mosh.org/#getting)
+Remote terminal application that allows roaming, supports intermittent connectivity, and provides intelligent local echo and line editing of user keystrokes.
+
+### [gh]()  
+
+### [lazygit]()  
+
+### [AWScli]()  
+
+### [htop]()  
+
+### [pstree]()  
+
+### [bat]() 
+
+### [Fuzzy Finder]() 
+
+### [Inav]()  
+
+### [rambox]()  
+```bash
+brew install \
+	gh lazygit \
+	tmux mosh awscli rambox htop pstree bat inav fzf
+```	
