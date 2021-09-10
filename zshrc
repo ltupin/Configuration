@@ -38,7 +38,7 @@ export FZF_DEFAULT_OPTS='--height 40% --preview "cat {}" --preview-window right:
 # Krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-# Aliases
+# Podman
 alias docker=podman
 
 # Kube-ps1
