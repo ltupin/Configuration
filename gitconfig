@@ -1,23 +1,43 @@
+[user]
+	email = my@email.com
+	name = username
+
 [push]
 	default = simple
+
 [alias]
 	ls = log --graph --pretty=format:\"%C(auto)%h%<(3)%d %s %C(bold blue)(%cr, %an)%Creset%n\" --abbrev-commit --all --find-copies -M --stat
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	la = log --graph --pretty=format:\"%C(auto)%h%<(3)%d %s %C(bold blue)(%cr, %an)%Creset\" --abbrev-commit --all
-	st = status
+
+	;log graph files and changes
+	l = log --stat --abbrev-commit --pretty=oneline --graph -t  --cc
+	
+	;log graph all branches
+	h = log --oneline --abbrev-commit --branches=* --graph --decorate
+	
+	;log patch hunk minimum info
+	lp =  log --unified=3 --abbrev-commit --date=relative
+	
+	;log patch view color words instead of entire lines
+	lpw = log --unified=1 --abbrev-commit --date=relative --color-words
+
 [color]
 	branch = auto
   	diff = auto
   	status = auto
+
 [color "branch"]
   	current = yellow reverse
   	local = yellow
   	remote = green
+
 [color "diff"]
   	meta = yellow bold
   	frag = magenta bold
   	old = red bold
   	new = green bold
+
 [color "status"]
   	added = yellow
   	changed = green
