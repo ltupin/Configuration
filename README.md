@@ -111,23 +111,30 @@ brew install \
 ### [Mosh](https://mosh.org/#getting)
 Remote terminal application that allows roaming, supports intermittent connectivity, and provides intelligent local echo and line editing of user keystrokes.
 
-### [gh]()  
+### [gh](https://github.com/cli/cli)  
+`gh` is GitHub on the command line. It brings pull requests, issues, and other GitHub concepts to the terminal next to where you are already working with `git` and your code.
 
-### [lazygit]()  
+### [LazyGit](https://github.com/jesseduffield/lazygit)  
+A simple terminal UI for git commands, written in Go with the gocui library.
 
-### [AWScli]()  
+### [AWScli](https://aws.amazon.com/cli/)  
+The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services. With just one tool to download and configure, you can control multiple AWS services from the command line and automate them through scripts.
 
-### [htop]()  
+### [htop](https://htop.dev/)  
+ This is htop, a cross-platform interactive process viewer. It is a text-mode application (for console or X terminals) and requires ncurses. 
 
-### [pstree]()  
+### [pstree](https://man7.org/linux/man-pages/man1/pstree.1.html)  
+Display a tree of processes
 
-### [bat]() 
+### [bat](https://github.com/sharkdp/bat) 
+`bat` supports syntax highlighting for a large number of programming and markup languages:
 
-### [Fuzzy Finder]() 
+### [Fuzzy Finder](https://github.com/junegunn/fzf) 
+It's an interactive Unix filter for command-line that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc.
 
-### [Inav]()  
+### [rambox](https://rambox.app/#home)  
+Rambox is a workspace browser that allows you to manage as many applications as you want, all in one place. It is perfect for people who care about productivity and work with many applications, both business and personal.
 
-### [rambox]()  
 ```bash
 brew install \
 	gh lazygit \
