@@ -11,10 +11,6 @@ brew update
 brew install --cask iterm2
 ```
 
-Import `Default.json` file:  
-
-<img src="iterm2.png" alt="drawing" width="200"/>
-
 ## In iterm2, install [oh-my-zsh](https://ohmyz.sh/#install):  
 - Git Aliases Cheatsheet: https://www.hschne.at/git-aliases/
 ```bash
@@ -39,13 +35,14 @@ cp zshrc ~/.zshrc
 brew install --cask font-hack-nerd-font
 ```
 
-## Install [Powerlevel10k](https://github.com/romkatv/powerlevel10k):
-```bash
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc	
+Import `Default.json` file:  
 
-cp p10k.zsh ~/.p10k.zsh
-cp -R sprites_sf /Users/ltupin/.sprites_sf
+<img src="iterm2.png" alt="drawing" width="200"/>
+
+## Install starship:
+```bash
+brew install starship
+eval "$(starship init zsh)"
 ```
 
 # Editors
