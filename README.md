@@ -36,7 +36,6 @@ cp zshrc ~/.zshrc
 
 ## Install [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts):
 ```bash
-brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 ```
 
