@@ -15,7 +15,7 @@ Import `Default.json` file:
 
 <img src="iterm2.png" alt="drawing" width="200"/>
 
-## Install [oh-my-zsh](https://ohmyz.sh/#install):  
+## In iterm2, install [oh-my-zsh](https://ohmyz.sh/#install):  
 - Git Aliases Cheatsheet: https://www.hschne.at/git-aliases/
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -29,7 +29,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/z
 # Zinit is a plugin manager for zsh
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 
-
+git clone https://github.com/ltupin/Configuration
+cd  Configuration
 cp zshrc ~/.zshrc
 ```
 
